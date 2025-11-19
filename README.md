@@ -171,5 +171,3 @@ Deploy the `dist/` folder to:
 ## 📜 License
 
 This project is open-source and released under the **MIT License**.
-
-```
