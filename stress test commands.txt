@@ -1,0 +1,44 @@
+backend
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+frontend
+npm run dev
+
+
+docker run -d --name stress1 --entrypoint stress polinux/stress --cpu 2 --vm 1 --vm-bytes 256M
+docker run -d --name stress2 --entrypoint stress polinux/stress --cpu 2 --vm 1 --vm-bytes 256M
+docker run -d --name stress3 --entrypoint stress polinux/stress --cpu 2 --vm 1 --vm-bytes 256M
+docker run -d --name stress4 --entrypoint stress polinux/stress --cpu 2 --vm 1 --vm-bytes 256M
+docker run -d --name stress5 --entrypoint stress polinux/stress --cpu 2 --vm 1 --vm-bytes 256M
+
+
+
+Run real services (Nginx, Redis, MySQL, Python apps, etc.)
+
+docker run -d --name nginx-test -p 8081:80 nginx
+docker run -d --name redis-test redis
+docker run -d --name mysql-test -e MYSQL_ROOT_PASSWORD=pass MySQL
+
+
+cleanup
+docker rm -f practical_dubinsky elated_c erf bold_hellman funny_robinson happy_lamport focused_heisenberg relaxed_ritchie wizardly_kepler
+
+
+stop all together
+docker stop $(docker ps -q)
+
+
+
+remove container
+docker rm -f <container_name_or_id>
+
+
+remove multiple stress containers
+docker rm -f stress1 stress2 stress3 stress4 stress5
+
+
+
+one time allowance for running scripts
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+
+./shutdown-all.ps1
+./run-all.ps1
