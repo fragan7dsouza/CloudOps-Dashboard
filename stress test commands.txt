@@ -4,11 +4,11 @@ frontend
 npm run dev
 
 
-docker run -d --name stress1 --entrypoint stress polinux/stress --cpu 2 --vm 1 --vm-bytes 256M
+ocker run -d --name stress1 --entrypoint stress polinux/stress --cpu 2 --vm 1 --vm-bytes 256M
 docker run -d --name stress2 --entrypoint stress polinux/stress --cpu 2 --vm 1 --vm-bytes 256M
 docker run -d --name stress3 --entrypoint stress polinux/stress --cpu 2 --vm 1 --vm-bytes 256M
 docker run -d --name stress4 --entrypoint stress polinux/stress --cpu 2 --vm 1 --vm-bytes 256M
-docker run -d --name stress5 --entrypoint stress polinux/stress --cpu 2 --vm 1 --vm-bytes 256M
+docker run -d --name stress5 --entrypoint stress polinux/stress --cpu 2 --vm 1 --vm-bytes 256Md
 
 
 
